@@ -26,6 +26,7 @@ const upload = multer({
 
 // All Books Route
 router.get('/', async (req, res) => {
+    console.log('1. books')
     let query = Book.find()
     if(req.query.title!=null && req.query.title!=''){  //query in url
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -64,6 +65,7 @@ router.post('/', upload.single('cover'), async (req, res) => {
     })
 
     try{
+        console.log('2. book:', book)
         await book.save()
         res.redirect('books')
     }catch(error){
