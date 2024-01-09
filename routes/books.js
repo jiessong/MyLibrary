@@ -6,7 +6,6 @@ const imageMimeTypes = ['image/jpeg', 'image/png', 'image/jpg'] //set the file t
 
 // All Books Route
 router.get('/', async (req, res) => {
-    console.log('1. books')
     let query = Book.find()
     if(req.query.title!=null && req.query.title!=''){  //query in url
         query = query.regex('title', new RegExp(req.query.title, 'i'))
@@ -33,7 +32,6 @@ router.get('/new', async (req, res) => {
 
 //Create Book Route
 router.post('/',  async (req, res) => {
-    console.log('req.file： '+req.file)
     const fileName = req.file!=null?req.file.filename:null  //get the file name
     const book = new Book({
         title: req.body.title,
@@ -45,7 +43,6 @@ router.post('/',  async (req, res) => {
     saveCover(book, req.body.cover)
 
     try{
-        console.log('2. book:', book)
         await book.save()
         res.redirect('books')
     }catch(error){
