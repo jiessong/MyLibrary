@@ -1,0 +1,8 @@
+<h2>Edit Book</h2>
+<!-- multipart/form-data means our data contains file formats -->
+<form action="/books/<%=book.id%>?_method=PUT" method="post">
+    <%- include('_form_fields') %>
+    <!-- difference between anchor a and button is that a links things, button is for forms -->
+    <a href="/books">Cancel</a> 
+    <button type="'submit">Update</button>
+</form>

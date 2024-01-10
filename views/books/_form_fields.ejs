@@ -1,6 +1,6 @@
 <div>
 <label>Book Title</label>
-<input type="text" name="title" value=<%= book.title %> >
+<input type="text" name="title" value="<%= book.title %>" >
 </div>
 <div>
 <label>Author</label>
@@ -19,7 +19,7 @@
 </div>
 <div>
     <label>Page Count</label>
-    <input type="number" name="pageCount" min="1" value="<%=book.pageCount %> ">
+    <input type="number" name="pageCount" min="1" value="<%=book.pageCount%>">
 </div>
 <div>
     <label>Cover</label>
@@ -27,5 +27,5 @@
 </div>
 <div>
     <label> Description</label>
-    <textarea name="description" <%= book.description %>></textarea>
+    <textarea name="description"><%=book.description%></textarea>
 </div>
